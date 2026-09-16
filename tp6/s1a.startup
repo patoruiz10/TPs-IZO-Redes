@@ -1,0 +1,2 @@
+ip a add 200.200.200.1/26 dev eth0
+route add default gw 200.200.200.62
