@@ -1,0 +1,11 @@
+ip a add 192.168.50.138/30 dev eth0
+ip a add 192.168.50.133/30 dev eth1
+ip a add 172.17.0.1/16 dev eth2
+
+
+ulimit -n 1024
+/etc/init.d/quagga start
+
+#NAT
+iptables -t nat -A POSTROUTING -o eth2 -j MASQUERADE
+ln -sf /shared/hosts /etc/hosts
