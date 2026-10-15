@@ -1,0 +1,11 @@
+ip a add 129.30.192.124/26 dev eth0 
+ip a add 192.168.50.150/30 dev eth1
+ip a add 192.168.50.146/30 dev eth2
+
+ulimit -n 1024
+/etc/init.d/quagga start
+
+ip link set dev eth0 mtu 1000
+ip link set dev eth2 mtu 620
+
+ln -sf /shared/hosts /etc/hosts

@@ -1,0 +1,7 @@
+ip a add 11.11.0.1/20 dev eth0
+ip route add default via 11.11.15.252
+
+ln -sf /shared/hosts /etc/hosts
+
+#sleep 2
+/etc/init.d/named start 
